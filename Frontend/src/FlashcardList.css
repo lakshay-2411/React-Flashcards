@@ -4,14 +4,14 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 300px;
-    margin: 0 auto;
+    width: fit-content;
+    margin: 70px auto;
   }
   
   .navigation-buttons {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 63%;
   }
   
   .prev-button,
