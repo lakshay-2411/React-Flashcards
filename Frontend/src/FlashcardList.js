@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Flashcard from './Flashcard';
-require("dotenv").config();
 import './FlashcardList.css';
 
 function FlashcardList() {
@@ -9,7 +8,7 @@ function FlashcardList() {
   const [flipped, setFlipped] = useState(false);
 
   const fetchFlashcards = () => {
-    fetch(`${process.env.BACKEND_URL}/api/flashcards`)
+    fetch(`https://react-flashcards-production.up.railway.app/api/flashcards`)
       .then(response => response.json())
       .then(data => setFlashcards(data));
   };

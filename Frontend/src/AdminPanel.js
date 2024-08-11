@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-require("dotenv").config();
 import './AdminPanel.css';
 
 function AdminPanel({ onUpdate }) {
@@ -10,7 +9,7 @@ function AdminPanel({ onUpdate }) {
 
   // Fetch existing flashcards
   useEffect(() => {
-    fetch(`${process.env.BACKEND_URL}/api/flashcards`)
+    fetch(`https://react-flashcards-production.up.railway.app/api/flashcards`)
       .then(response => response.json())
       .then(data => setFlashcards(data));
   }, []);
@@ -21,7 +20,7 @@ function AdminPanel({ onUpdate }) {
       alert('Front and back values cannot be empty');
       return;
     }
-    fetch(`${process.env.BACKEND_URL}/api/flashcards`, {
+    fetch(`https://react-flashcards-production.up.railway.app/api/flashcards`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -33,7 +32,7 @@ function AdminPanel({ onUpdate }) {
       setFront('');
       setBack('');
       // Fetch flashcards again after adding
-      fetch(`${process.env.BACKEND_URL}/api/flashcards`)
+      fetch(`https://react-flashcards-production.up.railway.app/api/flashcards`)
         .then(response => response.json())
         .then(data => setFlashcards(data));
     });
@@ -41,12 +40,12 @@ function AdminPanel({ onUpdate }) {
 
   // Delete a flashcard
   const handleDelete = (id) => {
-    fetch(`${process.env.BACKEND_URL}/api/flashcards/${id}`, {
+    fetch(`https://react-flashcards-production.up.railway.app/api/flashcards/${id}`, {
       method: 'DELETE',
     })
     .then(() => {
       // Fetch flashcards again after deleting
-      fetch(`${process.env.BACKEND_URL}/api/flashcards`)
+      fetch(`https://react-flashcards-production.up.railway.app/api/flashcards`)
         .then(response => response.json())
         .then(data => setFlashcards(data));
     });
@@ -65,7 +64,7 @@ function AdminPanel({ onUpdate }) {
       alert('Front and back values cannot be empty');
       return;
     }
-    fetch(`${process.env.BACKEND_URL}/api/flashcards/${editId}`, {
+    fetch(`https://react-flashcards-production.up.railway.app/api/flashcards/${editId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -78,7 +77,7 @@ function AdminPanel({ onUpdate }) {
       setBack('');
       setEditId(null);  // Reset the edit mode
       // Fetch flashcards again after updating
-      fetch(`${process.env.BACKEND_URL}/api/flashcards`)
+      fetch(`https://react-flashcards-production.up.railway.app/api/flashcards`)
         .then(response => response.json())
         .then(data => setFlashcards(data));
     });
