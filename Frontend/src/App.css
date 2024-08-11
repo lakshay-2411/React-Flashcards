@@ -1,0 +1,37 @@
+.App {
+  text-align: center;
+}
+
+h1 {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  /* background-color: #f4f4f4; */
+  padding: 10px;
+}
+
+.routes {
+  display: flex;
+  gap: 10px;
+}
+
+.flashcard-route {
+  background-color: black;
+  width: 100px;
+  height: 30px;
+  border-radius: 7px;
+  color: white;
+}
+
+.admin-route {
+  background-color: black;
+  color: white;
+  width: 100px;
+  height: 30px;
+  border-radius: 7px;
+}
+
+nav button:hover {
+  cursor: pointer;
+}

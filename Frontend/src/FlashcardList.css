@@ -1,0 +1,33 @@
+.flashcard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  .navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .prev-button,
+  .next-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .prev-button img {
+    width: 40px; /* Adjust the size as needed */
+    height: auto;
+  }
+
+  .next-button img {
+    width: 36px;
+    height: auto;
+  }

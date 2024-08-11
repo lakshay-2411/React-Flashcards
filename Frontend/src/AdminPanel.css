@@ -1,0 +1,59 @@
+.admin-panel {
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .admin-panel input {
+    width: 98%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #a0a0a0;
+  }
+  
+  .admin-panel button {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .admin-panel ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .admin-panel li {
+    margin: 10px 0;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: grid;
+    grid-template-columns: 2.5fr 0.25fr 0.25fr;
+    align-items: center;
+    text-align: left;
+  }
+  
+  .admin-panel li button {
+    background: none;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .editImage {
+    width: 17px;
+  }
+
+  .deleteImage {
+    width: 20px;
+  }
+  
