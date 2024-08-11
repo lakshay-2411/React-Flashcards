@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+require("dotenv").config();
 import './AdminPanel.css';
 
 function AdminPanel({ onUpdate }) {
@@ -9,7 +10,7 @@ function AdminPanel({ onUpdate }) {
 
   // Fetch existing flashcards
   useEffect(() => {
-    fetch('http://localhost:5000/api/flashcards')
+    fetch(`${process.env.BACKEND_URL}/api/flashcards`)
       .then(response => response.json())
       .then(data => setFlashcards(data));
   }, []);
@@ -20,7 +21,7 @@ function AdminPanel({ onUpdate }) {
       alert('Front and back values cannot be empty');
       return;
     }
-    fetch('http://localhost:5000/api/flashcards', {
+    fetch(`${process.env.BACKEND_URL}/api/flashcards`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -32,7 +33,7 @@ function AdminPanel({ onUpdate }) {
       setFront('');
       setBack('');
       // Fetch flashcards again after adding
-      fetch('http://localhost:5000/api/flashcards')
+      fetch(`${process.env.BACKEND_URL}/api/flashcards`)
         .then(response => response.json())
         .then(data => setFlashcards(data));
     });
@@ -40,12 +41,12 @@ function AdminPanel({ onUpdate }) {
 
   // Delete a flashcard
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/api/flashcards/${id}`, {
+    fetch(`${process.env.BACKEND_URL}/api/flashcards/${id}`, {
       method: 'DELETE',
     })
     .then(() => {
       // Fetch flashcards again after deleting
-      fetch('http://localhost:5000/api/flashcards')
+      fetch(`${process.env.BACKEND_URL}/api/flashcards`)
         .then(response => response.json())
         .then(data => setFlashcards(data));
     });
@@ -64,7 +65,7 @@ function AdminPanel({ onUpdate }) {
       alert('Front and back values cannot be empty');
       return;
     }
-    fetch(`http://localhost:5000/api/flashcards/${editId}`, {
+    fetch(`${process.env.BACKEND_URL}/api/flashcards/${editId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -77,7 +78,7 @@ function AdminPanel({ onUpdate }) {
       setBack('');
       setEditId(null);  // Reset the edit mode
       // Fetch flashcards again after updating
-      fetch('http://localhost:5000/api/flashcards')
+      fetch(`${process.env.BACKEND_URL}/api/flashcards`)
         .then(response => response.json())
         .then(data => setFlashcards(data));
     });
